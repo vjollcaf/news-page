@@ -1,0 +1,172 @@
+@function toRem($value) {
+    $remValue: ($value / 16) + rem; 
+    @return $remValue;
+}
+
+*{
+    box-sizing: border-box;
+    margin:auto;
+}
+
+:root{
+    --post-title: toRem(15);
+    --main-font:poppins;
+    --primary-font:toRem(15);
+    --second-font:toRem(14);
+}
+
+
+body{
+    font-family: var(--main-font);
+
+    a:link {
+        color: red;
+    }
+    
+    a:visited {
+        color: black;
+    }
+    
+    a:hover {
+        color: hotpink;
+    }
+    
+    a:active {
+        color: blue;
+    }
+}
+.container{
+    max-width: 1230px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.categories {
+    display: flex;
+    gap:2rem;
+    font-size:var(--primary-font);
+    padding: 2.25rem 0 2.875rem 2.875rem;
+    margin: 0 auto;
+    justify-content: center;
+
+    &__link{
+        text-decoration: none;
+    }
+
+    &__list{
+        padding:20px 20px;
+        color:#818386;
+    }
+}
+
+.posts{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    margin-bottom: 100px;
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.post{
+    box-shadow: 0px 7px 24px 0px rgb(44 63 88 / 10%);
+    
+    &__img{
+        max-width: 800px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    &__title{
+        font-size: var(--post-title);
+        margin-bottom: 24px;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        padding: 2.215rem;
+    }
+    &__description{
+        max-width: 752px;
+        width: 100%;
+        font-size: var(--main-font);
+        color:#595F69;
+        line-height: toRem(23);
+    }
+
+    &__date{
+        color: #818386;
+        margin-bottom: 24px;
+    }
+}
+
+
+.btn__load{
+    font-size: var(--main-font);
+    color: white;
+    background-color: #3A63DE;
+    padding:18px 38px 17px 39px;
+    border: none;
+    display: flex;
+    margin:0 auto;
+    margin-top:40px ;
+}
+
+
+@media only screen and (max-width: 1250px){
+    .categories{
+        font-size:var(--main-font);
+        padding: 20px;
+        overflow: auto;
+    }
+    .posts{
+        gap:2.063rem;
+        grid-template-columns: repeat(1,1fr);
+        .post{
+            &__title{
+                font-size: toRem(15);
+                color: #333333;
+            }
+            &__description{
+                font-size: toRem(15);
+                line-height:normal;
+            }
+            &__date{
+                font-size:14px;
+            }
+            &__img{
+                max-width: 100%;
+            }
+            .btn{
+                font-size: 25px;
+                padding: 20px 40px 19px 41px;
+            }
+        }
+    }
+}
+
+
+@media only screen and(max-width: 1024){
+    .posts{
+        grid-template-columns: repeat(1,1fr) !important;
+
+        &__img{
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width:320) {
+    .posts{
+        grid-template-columns: repeat(1,1fr);
+
+        &__img{
+            max-width: 100%;
+        }
+    }
+    
+}

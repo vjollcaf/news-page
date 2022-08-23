@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+:root {
+  --post-title: toRem(15);
+  --main-font:poppins;
+  --primary-font:toRem(15);
+  --second-font:toRem(14);
+}
+
+body {
+  font-family: var(--main-font);
+}
+body a:link {
+  color: red;
+}
+body a:visited {
+  color: black;
+}
+body a:hover {
+  color: hotpink;
+}
+body a:active {
+  color: blue;
+}
+
+.container {
+  max-width: 1230px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.categories {
+  display: flex;
+  gap: 2rem;
+  font-size: var(--primary-font);
+  padding: 2.25rem 0 2.875rem 2.875rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+.categories__link {
+  text-decoration: none;
+}
+.categories__list {
+  padding: 20px 20px;
+  color: #818386;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  margin-bottom: 100px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.post {
+  box-shadow: 0px 7px 24px 0px rgba(44, 63, 88, 0.1);
+}
+.post__img {
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.post__title {
+  font-size: var(--post-title);
+  margin-bottom: 24px;
+}
+.post__content {
+  display: flex;
+  flex-direction: column;
+  padding: 2.215rem;
+}
+.post__description {
+  max-width: 752px;
+  width: 100%;
+  font-size: var(--main-font);
+  color: #595F69;
+  line-height: 1.4375rem;
+}
+.post__date {
+  color: #818386;
+  margin-bottom: 24px;
+}
+
+.btn__load {
+  font-size: var(--main-font);
+  color: white;
+  background-color: #3A63DE;
+  padding: 18px 38px 17px 39px;
+  border: none;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 1250px) {
+  .categories {
+    font-size: var(--main-font);
+    padding: 20px;
+    overflow: auto;
+  }
+  .posts {
+    gap: 2.063rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .posts .post__title {
+    font-size: 0.9375rem;
+    color: #333333;
+  }
+  .posts .post__description {
+    font-size: 0.9375rem;
+    line-height: normal;
+  }
+  .posts .post__date {
+    font-size: 14px;
+  }
+  .posts .post__img {
+    max-width: 100%;
+  }
+  .posts .post .btn {
+    font-size: 25px;
+    padding: 20px 40px 19px 41px;
+  }
+}
+@media only screen and (max-width: 1024) {
+  .posts {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .posts__img {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 320) {
+  .posts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .posts__img {
+    max-width: 100%;
+  }
+}/*# sourceMappingURL=main.css.map */
