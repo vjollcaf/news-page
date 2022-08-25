@@ -19,7 +19,7 @@ body{
     font-family: var(--main-font);
 
     a:link {
-        // color: red;
+        color: blue;
     }
     a:visited {
         color:#818386;
@@ -30,7 +30,7 @@ body{
     }
     
     a:active {
-        // color: blue;
+        color: purple;
     }
 }
 .container{
@@ -38,7 +38,7 @@ body{
     width: 100%;
     display: block;
     margin: 0 auto;
-    position: relative;
+    // position: relative;
 }
 
 
@@ -115,13 +115,16 @@ body{
     margin-top:40px ;
     opacity:0;
     margin-bottom: 30px;
+    position: absolute;
+    top:50%;
+    left: 50%;
 }
 
 
 #loader{
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: -25%;
     width: 2rem;
     height: 2rem;
     border: 5px solid #f3f3f3;
@@ -129,8 +132,11 @@ body{
     border-radius: 100%;
     margin: auto;
     visibility: hidden;
-    animation: spin 1s infinite linear;;
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin 1s infinite linear;
 }
+
+
 #singlePost{
     width: 65.04%;
     margin: 0 auto;
@@ -157,6 +163,9 @@ body{
     }
 }
 
+.loaders{
+    position: relative !important;
+}
 
 
 

@@ -1,7 +1,7 @@
 'use strict';
 
 let defaults = {
-        per_page : 40,
+        per_page : 20,
         page: 1,
         catId: 206 
 }
@@ -15,14 +15,11 @@ let article = document.getElementsByClassName(`.post__content`)
 let btn_load = document.querySelector('button');
 const categories = document.getElementsByClassName('categories__link');
 const singlePost = document.getElementById('singlePost');
-let bool = true;
-console.log(bool);
-
+let singlePostContainer = document.getElementById("singlePost__container");
 
 
 const renderPosts =  function(listOfPosts){
         let html = '';
-
         listOfPosts.forEach((post,i) => {
                 
                 let img = post._embedded[`wp:featuredmedia`][0].link;
@@ -38,7 +35,7 @@ const renderPosts =  function(listOfPosts){
          </article>
          `;        
         })
-        posts.innerHTML  += html;
+        posts.insertAdjacentHTML('beforeend', html);
         btn_load.style.opacity= 1;      
  }
 
@@ -46,7 +43,6 @@ const renderPosts =  function(listOfPosts){
  const renderSinglePost = async function(article){
         console.log(`🔴 ${article}`);
         let html = '';article
-
         const date = article.date.split('T');
         console.log(article.link);
         let img = article._embedded[`wp:featuredmedia`][0].link;
@@ -62,13 +58,14 @@ const renderPosts =  function(listOfPosts){
         </div>
         </article>
         `
-        singlePost.innerHTML =  html;
+     
+        singlePost.insertAdjacentHTML('beforeend', html);
 }
 
 
 //have to get the query param to send the postid
 let singlePostId = window.location.search.split('?postId=').join('')
-console.log(singlePostId);
+
 const fetchSinglePost = async function(singlePostId){
         try{
         const singlePost = await fetch(`https://balkaninsight.com/wp-json/wp/v2/posts/${singlePostId}?_embed=1 `)
@@ -81,6 +78,7 @@ const fetchSinglePost = async function(singlePostId){
 
 const fetchPosts = async function(per_page = defaults.per_page, page = defaults.page, catID = defaults.catId){   
         showLoad();
+        // console.log(catID);
          try{
              const posts = await fetch(`https://balkaninsight.com/wp-json/wp/v2/posts?per_page=${per_page}&page=${page}&_embed=1&categories=${parseInt(catID)}`)
              const data = await posts.json()    
@@ -114,12 +112,15 @@ function hideLoad(){
 
 
 function getPosts(val){
-       // When the user clicks on the category it should reset the articles and api parameters and switch the category 
+       posts.innerHTML = '';
+       
+       const newUrl = window.location.origin + `/?categories=${val}`;
+       console.log(newUrl);
 
-//        window.location.replace('/index.html');
-       alert('clicked');
-       fetchPosts(defaults.per_page,defaults.page,val);
+       history.pushState({}, null, newUrl);
+        fetchPosts(10,1,val);
 }
+
 
 
 

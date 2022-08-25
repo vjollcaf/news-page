@@ -13,12 +13,19 @@
 body {
   font-family: var(--main-font);
 }
+body a:link {
+  color: blue;
+}
 body a:visited {
   color: #818386;
 }
 body a:hover {
   color: #3A63DE;
 }
+body a:active {
+  color: purple;
+}
+
 .container {
   max-width: 1230px;
   width: 100%;
