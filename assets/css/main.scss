@@ -15,24 +15,22 @@
     --second-font:toRem(14);
 }
 
-
 body{
     font-family: var(--main-font);
 
     a:link {
-        color: red;
+        // color: red;
     }
-    
     a:visited {
-        color: black;
+        color:#818386;
     }
     
     a:hover {
-        color: hotpink;
+        color: #3A63DE;
     }
     
     a:active {
-        color: blue;
+        // color: blue;
     }
 }
 .container{
@@ -40,6 +38,7 @@ body{
     width: 100%;
     display: block;
     margin: 0 auto;
+    position: relative;
 }
 
 
@@ -68,6 +67,8 @@ body{
     margin-bottom: 100px;
     width: 80%;
     margin: 0 auto;
+    position: relative;
+    gap: toRem(15);
 
 }
 
@@ -75,9 +76,8 @@ body{
     box-shadow: 0px 7px 24px 0px rgb(44 63 88 / 10%);
     
     &__img{
-        max-width: 800px;
-        width: 100%;
-        margin-bottom: 10px;
+        max-width: 100%;
+        margin-bottom: toRem(24);
     }
     
     &__title{
@@ -113,7 +113,54 @@ body{
     display: flex;
     margin:0 auto;
     margin-top:40px ;
+    opacity:0;
+    margin-bottom: 30px;
 }
+
+
+#loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #3A63DE;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;;
+}
+#singlePost{
+    width: 65.04%;
+    margin: 0 auto;
+}
+#singlePost{
+    max-width: 100%;
+}
+.alignnone {
+    width: 100%;
+    object-fit: contain;
+}
+
+#loader.display, .btn__load.display{
+    visibility: visible;
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
 
 
 @media only screen and (max-width: 1250px){

@@ -13,24 +13,18 @@
 body {
   font-family: var(--main-font);
 }
-body a:link {
-  color: red;
-}
 body a:visited {
-  color: black;
+  color: #818386;
 }
 body a:hover {
-  color: hotpink;
+  color: #3A63DE;
 }
-body a:active {
-  color: blue;
-}
-
 .container {
   max-width: 1230px;
   width: 100%;
   display: block;
   margin: 0 auto;
+  position: relative;
 }
 
 .categories {
@@ -56,15 +50,16 @@ body a:active {
   margin-bottom: 100px;
   width: 80%;
   margin: 0 auto;
+  position: relative;
+  gap: 0.9375rem;
 }
 
 .post {
   box-shadow: 0px 7px 24px 0px rgba(44, 63, 88, 0.1);
 }
 .post__img {
-  max-width: 800px;
-  width: 100%;
-  margin-bottom: 10px;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
 }
 .post__title {
   font-size: var(--post-title);
@@ -96,8 +91,61 @@ body a:active {
   display: flex;
   margin: 0 auto;
   margin-top: 40px;
+  opacity: 0;
+  margin-bottom: 30px;
 }
 
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #3A63DE;
+  border-radius: 100%;
+  margin: auto;
+  visibility: hidden;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
+
+#singlePost {
+  width: 65.04%;
+  margin: 0 auto;
+}
+
+#singlePost {
+  max-width: 100%;
+}
+
+.alignnone {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#loader.display, .btn__load.display {
+  visibility: visible;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media only screen and (max-width: 1250px) {
   .categories {
     font-size: var(--main-font);
