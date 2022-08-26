@@ -41,7 +41,6 @@ body{
     // position: relative;
 }
 
-
 .categories {
     display: flex;
     gap:2rem;
@@ -88,6 +87,8 @@ body{
         display: flex;
         flex-direction: column;
         padding: 2.215rem;
+        line-height:toRem(23);
+        gap:toRem(20)
     }
     &__description{
         max-width: 752px;
@@ -105,6 +106,22 @@ body{
 
 
 .btn__load{
+    // font-size: var(--main-font);
+    // color: white;
+    // background-color: #3A63DE;
+    // padding:18px 38px 17px 39px;
+    // border: none;
+    // display: flex;
+    // margin:0 auto;
+    margin-top:40px ;
+    visibility:hidden;
+    margin-bottom: 30px;
+    position: absolute;
+    top:50%;
+    left: 45%;
+}
+
+.btn--back, .btn__load{
     font-size: var(--main-font);
     color: white;
     background-color: #3A63DE;
@@ -113,18 +130,12 @@ body{
     display: flex;
     margin:0 auto;
     margin-top:40px ;
-    opacity:0;
-    margin-bottom: 30px;
-    position: absolute;
-    top:50%;
-    left: 50%;
 }
-
 
 #loader{
     position: absolute;
-    top: 50%;
-    left: -25%;
+    top: 25%;
+    left: 49%;
     width: 2rem;
     height: 2rem;
     border: 5px solid #f3f3f3;
@@ -141,15 +152,20 @@ body{
     width: 65.04%;
     margin: 0 auto;
 }
-#singlePost{
-    max-width: 100%;
-}
-.alignnone {
-    width: 100%;
-    object-fit: contain;
+
+.btn__load.display{
+    visibility: visible;
 }
 
-#loader.display, .btn__load.display{
+.alignnone {
+    // height: 400px;
+    height: calc(100% - 400px);
+    width: 100%;
+    object-fit: contain;
+    margin:20px 0 20px 0;
+}
+
+#loader.display{
     visibility: visible;
 }
 
@@ -165,11 +181,9 @@ body{
 
 .loaders{
     position: relative !important;
+
+    
 }
-
-
-
-
 
 
 @media only screen and (max-width: 1250px){
@@ -188,7 +202,7 @@ body{
             }
             &__description{
                 font-size: toRem(15);
-                line-height:normal;
+                line-height:toRem(23);
             }
             &__date{
                 font-size:14px;
@@ -225,4 +239,10 @@ body{
         }
     }
     
+}
+
+.btText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important
 }

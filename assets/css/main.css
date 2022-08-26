@@ -31,7 +31,6 @@ body a:active {
   width: 100%;
   display: block;
   margin: 0 auto;
-  position: relative;
 }
 
 .categories {
@@ -76,6 +75,8 @@ body a:active {
   display: flex;
   flex-direction: column;
   padding: 2.215rem;
+  line-height: 1.4375rem;
+  gap: 1.25rem;
 }
 .post__description {
   max-width: 752px;
@@ -90,6 +91,15 @@ body a:active {
 }
 
 .btn__load {
+  margin-top: 40px;
+  visibility: hidden;
+  margin-bottom: 30px;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}
+
+.btn--back, .btn__load {
   font-size: var(--main-font);
   color: white;
   background-color: #3A63DE;
@@ -98,14 +108,12 @@ body a:active {
   display: flex;
   margin: 0 auto;
   margin-top: 40px;
-  opacity: 0;
-  margin-bottom: 30px;
 }
 
 #loader {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 25%;
+  left: 49%;
   width: 2rem;
   height: 2rem;
   border: 5px solid #f3f3f3;
@@ -113,8 +121,8 @@ body a:active {
   border-radius: 100%;
   margin: auto;
   visibility: hidden;
+  animation: spin 1s infinite linear;
   -webkit-animation: spin 1s infinite linear;
-          animation: spin 1s infinite linear;
 }
 
 #singlePost {
@@ -122,17 +130,19 @@ body a:active {
   margin: 0 auto;
 }
 
-#singlePost {
-  max-width: 100%;
+.btn__load.display {
+  visibility: visible;
 }
 
 .alignnone {
+  height: calc(100% - 400px);
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  margin: 20px 0 20px 0;
 }
 
-#loader.display, .btn__load.display {
+#loader.display {
   visibility: visible;
 }
 
@@ -153,6 +163,10 @@ body a:active {
     transform: rotate(360deg);
   }
 }
+.loaders {
+  position: relative !important;
+}
+
 @media only screen and (max-width: 1250px) {
   .categories {
     font-size: var(--main-font);
@@ -169,7 +183,7 @@ body a:active {
   }
   .posts .post__description {
     font-size: 0.9375rem;
-    line-height: normal;
+    line-height: 1.4375rem;
   }
   .posts .post__date {
     font-size: 14px;
@@ -198,4 +212,9 @@ body a:active {
   .posts__img {
     max-width: 100%;
   }
+}
+.btText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px !important;
 }/*# sourceMappingURL=main.css.map */

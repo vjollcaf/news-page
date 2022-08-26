@@ -9,18 +9,15 @@
     <title>Single Page Page</title>
 </head>
 <body>
+
     <div class="conatiner">
-        <ul class="categories">
-            <li class="categories__list"><a class="categories__link" value="0" href="/index.html">All</a></li>
-            <li class="categories__list"><a onclick="getPosts(206)" class="categories__link" value="206">Albania</a></li>
-            <li class="categories__list"><a onclick="getPosts(211)" class="categories__link" value="211">Bulgaria</a></li>
-            <li class="categories__list"><a onclick="getPosts(191)" class="categories__link" value="191">Croatia</a></li>
-        </ul>
         <div class="singlePost" id="singlePost">
         </div>
         <div class="loaders">
             <button class="btn btn__load">Load more</button>
             <div id="loader"></div>
+         <button class="btn btn--back" onclick="history.back()">Go Back</button>
+
         </div>
     </div>
 
