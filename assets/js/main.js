@@ -120,6 +120,13 @@ function hideButtonLoad(){
      
 
 function getPosts(countryID){
+        for(let i = 0; i < categories.length ; i++){
+                categories[i].addEventListener('click', function(){
+                       categories[i].classList.add('active')
+                })
+                categories[i].classList.remove('active')
+        }
+
        defaults.page = 1;
        defaults.catId = countryID;
        showLoad()
@@ -130,17 +137,4 @@ function getPosts(countryID){
 
        fetchPosts(defaults.per_page, defaults.page,countryID);
 }
-
-      
-for(let i = 0; i < categories.length ; i++){
-        categories[i].addEventListener('click', function(){
-               categories[i].classList.add('active')
-        })
-        categories[i].classList.remove('active')
-}
-
-
-
-
-
-
+   
