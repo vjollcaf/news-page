@@ -22,8 +22,8 @@ body a:visited {
 body a:hover {
   color: #3A63DE;
 }
-body a:active {
-  color: purple;
+body a:active, body a.active {
+  color: purple !important;
 }
 
 .container {
@@ -217,4 +217,13 @@ body a:active {
   display: flex;
   flex-direction: column;
   gap: 20px !important;
+}
+.btText img {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 0.9375rem;
+}
+.btText figure img {
+  width: 45%;
 }/*# sourceMappingURL=main.css.map */

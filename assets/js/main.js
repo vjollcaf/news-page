@@ -13,8 +13,6 @@ let article = document.getElementsByClassName(`.post__content`)
 let btn_load = document.querySelector('button');
 const singlePost = document.getElementById('singlePost');
 const categories = document.getElementsByTagName(`a`);
-console.log(categories);
-
 
 let singlePostContainer = document.getElementById("singlePost__container");
 
@@ -31,9 +29,7 @@ const renderPosts =  function(listOfPosts){
              <h2 class="post__title">${post.title.rendered}</h2>
              <a  class="post__link" href="/single.html?postId=${post.id}"><img class="post__img" src="${img}" alt="This is an image"> </img></a>  
              <p class="post__date">${date[0]}</p>
-             <div class="testt">
              <p class="post__description">${post.excerpt.rendered}</p>
-             </div>
              </div>
          </div>
          </article>
@@ -47,7 +43,6 @@ const renderPosts =  function(listOfPosts){
         let html = '';
         const date = article.date.split('T');
         let img = article._embedded["wp:featuredmedia"][0].link;
-
          html = `
         <article class="post" id="singlePost">
                 <div class="post__content">
@@ -116,17 +111,15 @@ function showButtonLoad(){
 }
 function hideButtonLoad(){
         btn_load.classList.remove('display');
-     }
-     
+ }
 
 function getPosts(countryID){
-        for(let i = 0; i < categories.length ; i++){
-                categories[i].addEventListener('click', function(){
-                       categories[i].classList.add('active')
+        Array.from(categories).forEach(cat=>{
+                cat.addEventListener('click', function(){
+                        cat.classList.add('active')
                 })
-                categories[i].classList.remove('active')
-        }
-
+                cat.classList.remove('active')
+        })
        defaults.page = 1;
        defaults.catId = countryID;
        showLoad()

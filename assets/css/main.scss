@@ -29,9 +29,10 @@ body{
         color: #3A63DE;
     }
     
-    a:active {
+    a.active{
         color: purple;
     }
+    
 }
 .container{
     max-width: 1230px;
@@ -106,13 +107,6 @@ body{
 
 
 .btn__load{
-    // font-size: var(--main-font);
-    // color: white;
-    // background-color: #3A63DE;
-    // padding:18px 38px 17px 39px;
-    // border: none;
-    // display: flex;
-    // margin:0 auto;
     margin-top:40px ;
     visibility:hidden;
     margin-bottom: 30px;
@@ -244,5 +238,17 @@ body{
 .btText {
     display: flex;
     flex-direction: column;
-    gap: 20px !important
+    gap: 20px !important;
+
+    img{
+        height: fit-content;
+        font-size: toRem(15);
+    }
+    figure{
+        img{
+            width: 45%;
+            // margin: 0 auto;
+        }
+    }
+  
 }
